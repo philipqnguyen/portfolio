@@ -4,7 +4,7 @@
 
 This Portfolio is under heavy construction. When finished, it will be my portfolio showcasing my work as a web app developer.
 
-![alt text](https://www.dropbox.com/s/kesmibes03d9fyt/Screen%20Shot%202014-09-16%20at%204.50.48%20PM.png?dl=0 "Screenshot of homepage")
+![alt text](https://www.dropbox.com/s/kesmibes03d9fyt/Screen%20Shot%202014-09-16%20at%204.50.48%20PM.png?dl=0)
 
 ## Features
 
