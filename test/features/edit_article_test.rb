@@ -1,7 +1,7 @@
 require "test_helper"
 
-feature "Edit an Article" do
-  scenario "by editing an existing article" do
+describe "Edit an Article", :capybara do
+  it "should edit an existing article" do
     visit article_path(articles(:another_test).id)
     click_on "Edit"
 
