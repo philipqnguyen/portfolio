@@ -2,14 +2,12 @@ require "test_helper"
 
 feature "Delete an Article" do
   scenario "with a click" do
-    article = Article.create(
-    title: "Test title to delete",
-    body: "Test body to delete"
-    )
+
     visit articles_path
+    current_article_count = page.all(:link, "Destroy").count
 
-    click_on "Destroy"
+    page.all(:link, "Destroy")[0].click
 
-    page.wont_have_content "Test body to delete"
+    page.all(:link, "Destroy").count.must_equal(current_article_count - 1)
   end
 end
