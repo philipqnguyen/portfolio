@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'coffee-rails', '~> 4.0.0'
+gem 'foundation-rails', github: 'philipqnguyen/foundation-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'rails', '4.1.6'
