@@ -13,13 +13,16 @@ gem 'uglifier', '>= 1.3.0'
 gem 'unicorn'
 
 group :test do
+  gem 'capybara-mechanize'
   gem 'minitest-rails'
   gem 'minitest-rails-capybara'
+  gem "poltergeist"
 end
 
 group :development do
   gem 'spring'
   gem 'sqlite3'
+  gem 'launchy'
 end
 
 group :production do

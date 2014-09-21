@@ -1,6 +1,6 @@
 require "test_helper"
 
-describe "Theme", :capybara do
+describe "Theme from home page" do
   it "should detect for the existance of a Zurb" do
     visit root_path
 

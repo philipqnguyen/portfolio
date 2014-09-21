@@ -1,6 +1,6 @@
 require "test_helper"
 
-describe "Delete an Article", :capybara do
+describe "Delete an Article page" do
   it "should delete with a click" do
 
     visit articles_path

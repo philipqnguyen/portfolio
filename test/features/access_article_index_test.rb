@@ -1,6 +1,6 @@
 require "test_helper"
 
-describe "Visit the article index page", :capybara do
+describe "Visit the article index page" do
 
   it "should have a blog" do
     visit articles_path

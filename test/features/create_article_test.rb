@@ -1,6 +1,6 @@
 require "test_helper"
 
-describe "New Article", :capybara do
+describe "New Article page" do
   it " Should create a new article from articles_path" do
     visit articles_path
     click_on 'New Article'
