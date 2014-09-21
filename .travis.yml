@@ -8,7 +8,7 @@ env:
 script:
   - RAILS_ENV=test bundle exec rake db:migrate --trace
   - bundle exec rake db:test:prepare
-before_script:
-  - sqlite -e "create database portfolio_test"
-  - psql -c "create database portfolio_test" -U postgres
-bundler_args: --binstubs=./bundler_stubs
+# before_script:
+#   - sqlite -e "create database portfolio_test"
+#   - psql -c "create database portfolio_test" -U postgres
+# bundler_args: --binstubs=./bundler_stubs
