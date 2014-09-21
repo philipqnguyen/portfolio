@@ -29,8 +29,7 @@ end
 
 # Spec class for spec/features/**
 class FeatureSpec < Capybara::Rails::TestCase
-  # require "capybara/poltergeist"
-  Capybara.app_host = "http://google.com"
+  require "capybara/poltergeist"
   include Capybara::DSL
   Capybara.default_driver = :rack_test
   # Capybara.javascript_driver = :poltergeist

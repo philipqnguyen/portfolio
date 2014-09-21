@@ -7,18 +7,20 @@ describe "Can acces home page" do
   end
 end
 
-# The test below will work with default_driver = :poltergeist
-# However, poltergeist will cause a transaction in sqlite to fail
-# So poltergeist and this this test below has been commented out.
-#
-# describe "Remote home page" do
-#   it "should access remote content" do
+describe "Remote home page" do
+  before do
+    Capybara.current_driver = :poltergeist
+  end
 
-#     visit "philip-q-nguyen.com"
+  it "should access remote content" do
 
-#     save_and_open_page
+    visit "http://philip-q-nguyen.com"
 
-#     page.must_have_content "Welcome"
-#   end
-# end
+    page.must_have_content "Welcome"
+  end
+
+  after do
+    Capybara.use_default_driver
+  end
+end
 
