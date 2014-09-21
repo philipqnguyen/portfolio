@@ -3,7 +3,7 @@ require "test_helper"
 describe "Can acces home page" do
   it "should have content locally" do
     visit root_path
-    page.must_have_content "fdsafadsfdsafasf"
+    page.must_have_content "Welcome"
   end
 end
 

@@ -1,14 +1,17 @@
 language: ruby
 rvm:
-  - 2.1.2
-
+- 2.1.2
 env:
-  - DB="sqlite"
-  # - DB="postgresql"
+- DB="sqlite"
 script:
-  - RAILS_ENV=test bundle exec rake db:migrate --trace
-  - bundle exec rake
-# before_script:
-#   - sqlite -e "create database portfolio_test"
-#   - psql -c "create database portfolio_test" -U postgres
-# bundler_args: --binstubs=./bundler_stubs
+- RAILS_ENV=test bundle exec rake db:migrate --trace
+- bundle exec rake
+deploy:
+  provider: heroku
+  api_key:
+    secure: WaQducIHer1zs2/MhvUtt5vkCiZ6s4So/SmAz5DOiMGX/vZ9+JgFmCVRvGw0bViA0LNY/JN+hgzHzG3RvBTxu81PwNbTH/fkcIsP9h75uLowTpuWWhjJwU+EnmwynU7s1ucRts+PI1wl3kQT0qjKw4Ic+qlbZAm/CyTO91aSj7E=
+  app: philip-q-nguyen
+  on:
+    repo: philipqnguyen/portfolio
+    branch: master
+  run: "rake db:migrate"
