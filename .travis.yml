@@ -8,7 +8,7 @@ env:
 before_script:
 - psql -c 'create database portfolio_test' -U postgres
 script:
-- RAILS_ENV=test bundle exec rake db:create db:migrate test --trace
+- RAILS_ENV=test bundle exec rake db:create db:migrate --trace
 - bundle exec rake
 deploy:
   provider: heroku
