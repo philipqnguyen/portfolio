@@ -1,7 +1,7 @@
 require "test_helper"
 
-feature "New Article" do
-  scenario "Create a new article from articles_path" do
+describe "New Article page" do
+  it " Should create a new article from articles_path" do
     visit articles_path
     click_on 'New Article'
 

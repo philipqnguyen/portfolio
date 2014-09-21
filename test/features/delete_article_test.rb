@@ -1,7 +1,7 @@
 require "test_helper"
 
-feature "Delete an Article" do
-  scenario "with a click" do
+describe "Delete an Article page" do
+  it "should delete with a click" do
 
     visit articles_path
     current_article_count = page.all(:link, "Destroy").count
