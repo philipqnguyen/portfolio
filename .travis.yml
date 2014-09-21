@@ -1,10 +1,12 @@
 language: ruby
 rvm:
 - 2.1.2
+addon:
+  postgresql: "9.3"
 env:
-- DB="development_psql"
-- DB="test_psql"
-- DB="production_psql"
+- DB=postgresql
+before_script:
+- psql -c 'create database travis_test_psql' -U postgres
 script:
 - RAILS_ENV=test bundle exec rake db:migrate --trace
 - bundle exec rake
