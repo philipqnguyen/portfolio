@@ -6,7 +6,7 @@ addon:
 env:
 - DB=postgresql
 before_script:
-- psql -c 'create database travis_test_psql' -U postgres
+- psql -c 'create database test_psql' -U postgres
 script:
 - RAILS_ENV=test bundle exec rake db:migrate --trace
 - bundle exec rake
