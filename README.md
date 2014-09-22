@@ -1,3 +1,5 @@
+![](https://travis-ci.org/philipqnguyen/portfolio.svg?branch=master)
+
 # My Personal Portfolio
 
 ## Description
