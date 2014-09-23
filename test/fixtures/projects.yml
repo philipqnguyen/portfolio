@@ -1,0 +1,14 @@
+project_1:
+  id: 1
+  name: Hello Test Project!
+  technologies_used: Amazing test post of the day!
+
+project_2:
+  id: 2
+  name: Another Test Post!
+  technologies_used: Here is another test body!
+
+project_delete:
+  id: 3
+  name: To be deleted!
+  technologies_used: "The test will delete this project!"
