@@ -10,6 +10,9 @@ require "minitest/rails/capybara"
 # Uncomment for awesome colorful output
 require "minitest/pride"
 
+# Use for testing web pages
+require "capybara/poltergeist"
+
 class ActiveSupport::TestCase
     ActiveRecord::Migration.check_pending!
 
@@ -29,7 +32,6 @@ end
 
 # Spec class for spec/features/**
 class FeatureSpec < Capybara::Rails::TestCase
-  require "capybara/poltergeist"
   include Capybara::DSL
   Capybara.default_driver = :rack_test
   # Capybara.javascript_driver = :poltergeist
