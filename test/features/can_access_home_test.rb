@@ -23,4 +23,3 @@ describe "Remote home page" do
     Capybara.use_default_driver
   end
 end
-

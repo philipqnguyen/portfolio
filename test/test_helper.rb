@@ -13,16 +13,20 @@ require "minitest/pride"
 # Use for testing web pages
 require "capybara/poltergeist"
 
-class ActiveSupport::TestCase
+module ActiveSupport
+  class TestCase
     ActiveRecord::Migration.check_pending!
 
-  # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
-  #
-  # Note: You'll currently still have to declare fixtures explicitly in integration tests
-  # -- they do not yet inherit this setting
-  fixtures :all
+    # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in
+    # alphabetical order.
+    #
+    # Note: You'll currently still have to declare fixtures explicitly in
+    # integration tests
+    # -- they do not yet inherit this setting
+    fixtures :all
 
-  # Add more helper methods to be used by all tests here...
+    # Add more helper methods to be used by all tests here...
+  end
 end
 
 # class ActionDispatch::IntegrationTest
