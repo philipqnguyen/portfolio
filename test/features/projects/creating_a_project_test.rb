@@ -15,7 +15,7 @@ describe "As the site owner, I want to add a portfolio item page" do
     page.status_code.must_equal 200
   end
 
-  it "should not submit irf inputs are unfilled" do
+  it "should not submit if inputs are unfilled" do
     visit new_project_path
 
     click_on "Create Project"
