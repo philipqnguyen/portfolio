@@ -22,7 +22,8 @@ class ProjectsController < ApplicationController
   end
 
   private
-    def project_params
-      params.require(:project).permit(:name, :technologies_used)
-    end
+
+  def project_params
+    params.require(:project).permit(:name, :technologies_used)
+  end
 end
