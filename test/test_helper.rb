@@ -41,3 +41,10 @@ class FeatureSpec < Capybara::Rails::TestCase
   # Capybara.javascript_driver = :poltergeist
   register_spec_type(/page$/, self)
 end
+
+def sign_in(test_user = users(:king_kong))
+  visit new_user_session_path
+  fill_in "Email", with: test_user.email
+  fill_in "Password", with: "password"
+  click_on "Log in"
+end
