@@ -2,13 +2,16 @@ hello_test:
   id: 1
   title: Hello Test!
   body: Amazing test post of the day!
+  author: Bob
 
 another_test:
   id: 2
   title: Another Test Post!
   body: Here is another test body!
+  author: Joe
 
 article_3:
   id: 3
   title: Third article!
   body: The third article in the third body!
+  author: Wendy
