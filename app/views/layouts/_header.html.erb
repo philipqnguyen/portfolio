@@ -7,6 +7,16 @@
       <li><%= link_to "Home", root_path, class: "button" %></li>
       <li><%= link_to "Blog", articles_path, class: "button" %></li>
       <li><%= link_to "Portfolio", projects_path, class: "button" %></li>
+      <% if user_signed_in? %>
+        <li>
+          <%= link_to "Sign out", destroy_user_session_path, method: :delete,
+          class: "button" %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to "Sign in", new_user_session_path, class: "button" %>
+        </li>
+      <% end %>
     </ul>
   </div>
 </div>
