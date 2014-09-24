@@ -16,8 +16,7 @@ describe "As the site visitor, I want to be able to sign up on the web page" do
   end
 end
 
-
-# describe "As the site owner, I want to restrict access to the articles page" do
+# describe "As site owner, I want to restrict access to the articles page" do
 #   it "should not allow unsigned users to edit articles" do
 #     visit edit_article_path(articles(:article_3).id)
 
@@ -40,7 +39,7 @@ end
 #   end
 # end
 
-# describe "As the site owner, I want to restrict access to the projects page" do
+# describe "As site owner, I want to restrict access to the projects page" do
 #   it "should not allow unsigned users to edit projects" do
 #     visit edit_project_path(projects(:project_2).id)
 

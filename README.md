@@ -10,7 +10,7 @@ Current it can be used to post blog articles with a title and a body. In additio
 
 Authentication via devise has been put in place. Users can sign up, sign in, and sign out. Users must be signed in to post/edit/delete articles in the blog section.
 
-Article page now up!
+Articles belong to Users (also known as Authors), and Users has many Articles.
 
 ![](http://i6.photobucket.com/albums/y242/ffmegaman/ScreenShot2014-09-22at113932PM.png "Screenshot of project show page")
 
