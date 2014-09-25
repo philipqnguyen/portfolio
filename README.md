@@ -1,4 +1,5 @@
 ![](https://travis-ci.org/philipqnguyen/portfolio.svg?branch=master)
+[![Coverage Status](https://coveralls.io/repos/philipqnguyen/portfolio/badge.png?branch=master)](https://coveralls.io/r/philipqnguyen/portfolio?branch=master)
 
 # My Personal Portfolio
 
