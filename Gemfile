@@ -22,6 +22,7 @@ group :test do
 end
 
 group :development do
+  gem 'coveralls', require: false
   gem 'guard'
   gem 'guard-minitest'
   gem 'guard-unicorn'
