@@ -44,9 +44,9 @@ class FeatureSpec < Capybara::Rails::TestCase
   register_spec_type(/page$/, self)
 end
 
-def sign_in(test_user = users(:king_kong))
+def sign_in(test_user = :king_kong)
   visit new_user_session_path
-  fill_in "Email", with: test_user.email
+  fill_in "Email", with: users(test_user).email
   fill_in "Password", with: "password"
   click_on "Log in"
 end

@@ -10,7 +10,14 @@ describe "New Article page" do
     click_on "Create Article"
 
     page.text.must_include "Article was successfully created."
+    page.text.must_include "Status: Unpublished"
     page.text.must_include "A test title"
     page.text.must_include "A test body"
+  end
+
+  it "Should not allow visitors to see the new article page" do
+    visit new_article_path
+
+    page.text.must_include "You need to sign in or sign up before continuing"
   end
 end

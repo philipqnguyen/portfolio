@@ -18,3 +18,15 @@ joe_bob:
   id: 3
   email: joe@bob.com
   encrypted_password: <%= User.new.send(:password_digest, "password") %>
+
+editor:
+  id: 4
+  email: editor@editor.com
+  encrypted_password: <%= User.new.send(:password_digest, "password") %>
+  role: editor
+
+author:
+  id: 5
+  email: author@author.com
+  encrypted_password: <%= User.new.send(:password_digest, "password") %>
+  role: author
