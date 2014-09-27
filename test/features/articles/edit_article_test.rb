@@ -15,7 +15,15 @@ describe "Edit an Article on page" do
     page.text.must_include "successfully updated."
   end
 
-  it "should edit an existing article as an author" do
+  it "should not allow authors to edit other's articles" do
+    sign_in
+
+    visit edit_article_path articles(:author_art_2).id
+
+    page.text.must_include "You are not authorized to perform this action."
+  end
+
+  it "should edit an existing article as an editor" do
     sign_in :editor
     visit edit_article_path articles(:hello_test).id
 

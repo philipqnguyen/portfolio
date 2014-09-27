@@ -11,11 +11,9 @@
       <%= link_to 'New Article', new_article_path %>
     </div>
   <% end %>
-  <% if policy(@articles).create? %>
-    <div class="large-12 columns">
-      <%= link_to 'My Articles', author_page_path %>
-    </div>
-  <% end %>
+  <div class="large-12 columns">
+    <%= link_to 'All Articles', articles_path %>
+  </div>
 
   <% @articles.each do |article| %>
     <article class="large-12 columns">

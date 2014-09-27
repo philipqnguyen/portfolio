@@ -22,3 +22,32 @@ describe "As an editor, delete an Article from the page" do
     page.text.must_include "Article was successfully destroyed."
   end
 end
+
+describe "As an author, I can't delete an Article from the page" do
+  before do
+    sign_in :author
+  end
+
+  it "should not delete from the index" do
+    visit articles_path
+    current_article_count = page.all(:link, "Destroy").count
+
+    page.has_no_link? "Destroy"
+    page.has_no_link? "Delete"
+  end
+
+  it "should not delete from the show" do
+    visit article_path articles(:hello_test).id
+
+    page.has_no_link? "Destroy"
+    page.has_no_link? "Delete"
+  end
+
+  it "should not delete my own article from the show" do
+    visit article_path articles(:author_art_2).id
+
+    page.has_no_link? "Destroy"
+    page.has_no_link? "Delete"
+  end
+end
+

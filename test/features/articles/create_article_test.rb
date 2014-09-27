@@ -2,7 +2,7 @@ require "test_helper"
 
 describe "New Article page" do
   it "Should let Authors create a new article from articles_path" do
-    sign_in
+    sign_in :author
 
     visit new_article_path
     page.fill_in "Title", with: "A test title"

@@ -8,6 +8,11 @@ class ArticlesController < ApplicationController
     @articles = policy_scope(Article)
   end
 
+  def author_page
+    @articles = current_user.articles.all
+    authorize @articles
+  end
+
   # GET /articles/1
   # GET /articles/1.json
   def show
@@ -23,6 +28,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
+    authorize @article
   end
 
   # POST /articles
@@ -68,7 +74,8 @@ class ArticlesController < ApplicationController
   # Never trust parameters from the scary internet, only allow the white list
   # through.
   def article_params
-    params.require(:article).permit(*policy(@article || Article).permitted_attributes)
+    params.require(:article).permit(
+      *policy(@article || Article).permitted_attributes)
   end
 
   def user_not_authorized

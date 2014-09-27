@@ -25,3 +25,17 @@ article_unpublished:
   body: The body of fourth article
   author_id: 2
   published: false
+
+author_art_1:
+  id: 5
+  title: Author article 1
+  body: Body by author
+  author_id: 5
+  published: false
+
+author_art_2:
+  id: 6
+  title: Author article 2
+  body: Body by author again
+  author_id: 5
+  published: true

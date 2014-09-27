@@ -8,7 +8,7 @@ class ArticlePolicy < ApplicationPolicy
   end
 
   def update?
-    user.author? || user.editor? if user
+    user.id == record.author_id || user.editor? if user
   end
 
   def create?
@@ -27,22 +27,16 @@ class ArticlePolicy < ApplicationPolicy
     user.author? || user.editor? if user
   end
 
+  def author_page?
+    user.author? || user.editor? if user
+  end
+
   class Scope < Scope
     def resolve
       if user
         scope.all
       else
         scope.where published: true
-      end
-    end
-
-    def find
-      if user
-        scope.find(params[:id])
-      else
-        article = scope.find(params[:id])
-        article if article.published?
-        raise Pundit::NotAuthorizedError, "must be logged in" unless user
       end
     end
   end
