@@ -2,16 +2,26 @@ hello_test:
   id: 1
   title: Hello Test!
   body: Amazing test post of the day!
-  author: Bob
+  author_id: 1
+  published: true
 
 another_test:
   id: 2
   title: Another Test Post!
   body: Here is another test body!
-  author: Joe
+  author_id: 2
+  published: true
 
 article_3:
   id: 3
   title: Third article!
   body: The third article in the third body!
-  author: Wendy
+  author_id: 3
+  published: true
+
+article_unpublished:
+  id: 4
+  title: I am not published yo!
+  body: The body of fourth article
+  author_id: 2
+  published: false

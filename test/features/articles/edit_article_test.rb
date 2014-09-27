@@ -1,7 +1,7 @@
 require "test_helper"
 
 describe "Edit an Article on page" do
-  it "should edit an existing article" do
+  it "should edit an existing article as a signed in user" do
     sign_in
     visit new_article_path
     fill_in "Title", with: "Test title by king"
@@ -13,5 +13,11 @@ describe "Edit an Article on page" do
     click_on "Update Article"
 
     page.text.must_include "successfully updated."
+  end
+
+  it "should not allow visitors to edit existing articles" do
+    visit edit_article_path(articles(:hello_test).id)
+
+    page.text.must_include "You need to sign in or sign up before continuing"
   end
 end

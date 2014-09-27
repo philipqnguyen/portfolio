@@ -5,16 +5,27 @@
       <p>Sorry, no articles as of yet. Come back soon!</p>
     <% end %>
   </div>
-  <div class="large-12 columns">
-    <%= link_to 'New Article', new_article_path %>
-  </div>
+
+  <% if policy(@articles).create? %>
+    <div class="large-12 columns">
+      <%= link_to 'New Article', new_article_path %>
+    </div>
+  <% end %>
+
   <% @articles.each do |article| %>
     <article class="large-12 columns">
       <h3><%= article.title %></h3>
       <p><%= article.body %></p>
+
       <%= link_to 'Show', article %>
-      <%= link_to 'Edit', edit_article_path(article) %>
-      <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+      <% if policy(article).update? %>
+        <%= link_to 'Edit', edit_article_path(article) %>
+      <% end %>
+
+      <% if policy(article).destroy? %>
+        <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
     </article>
   <% end %>
 </section>
