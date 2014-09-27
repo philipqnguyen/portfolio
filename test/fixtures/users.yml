@@ -8,13 +8,28 @@ the_hobbit:
   id: 1
   email: the@hobbit.com
   encrypted_password: <%= User.new.send(:password_digest, "password") %>
+  role: author
 
 king_kong:
   id: 2
   email: king@kong.com
   encrypted_password: <%= User.new.send(:password_digest, "password") %>
+  role: author
 
 joe_bob:
   id: 3
   email: joe@bob.com
   encrypted_password: <%= User.new.send(:password_digest, "password") %>
+  role: author
+
+editor:
+  id: 4
+  email: editor@editor.com
+  encrypted_password: <%= User.new.send(:password_digest, "password") %>
+  role: editor
+
+author:
+  id: 5
+  email: author@author.com
+  encrypted_password: <%= User.new.send(:password_digest, "password") %>
+  role: author

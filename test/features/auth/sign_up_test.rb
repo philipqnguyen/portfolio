@@ -1,18 +1,18 @@
-require "test_helper"
+require 'test_helper'
 
-describe "As the site visitor, I want to be able to sign up on the web page" do
-  it "should allow me to sign up for an account" do
+describe 'As the site visitor, I want to be able to sign up on the web page' do
+  it 'should allow me to sign up for an account' do
     visit root_path
-    click_on "Sign in"
-    click_on "Sign up"
+    click_on 'Sign in'
+    click_on 'Sign up'
 
-    fill_in "Email", with: "test@example.com"
-    fill_in "Password", with: "password"
-    fill_in "Password confirmation", with: "password"
+    fill_in 'Email', with: 'test@example.com'
+    fill_in 'Password', with: 'password'
+    fill_in 'Password confirmation', with: 'password'
 
-    click_on "Sign up"
+    click_on 'Sign up'
 
-    page.must_have_content "Welcome! You have signed up successfully."
+    page.must_have_content 'Welcome! You have signed up successfully.'
   end
 end
 
