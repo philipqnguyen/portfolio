@@ -1,3 +1,4 @@
+# Default parent policy. Other policies will inherit from this class.
 class ApplicationPolicy
   attr_reader :user, :record
 
@@ -11,7 +12,7 @@ class ApplicationPolicy
   end
 
   def show?
-    scope.where(:id => record.id).exists?
+    scope.where(id: record.id).exists?
   end
 
   def create?
@@ -38,6 +39,8 @@ class ApplicationPolicy
     Pundit.policy_scope!(user, record.class)
   end
 
+  # Parent scope. Other scopes will inherit from this. Scope controls the data
+  # that can be displayed to specific user roles in the view.
   class Scope
     attr_reader :user, :scope
 
@@ -51,4 +54,3 @@ class ApplicationPolicy
     end
   end
 end
-

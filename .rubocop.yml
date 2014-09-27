@@ -1,0 +1,15 @@
+# This is the configuration used to check the rubocop source code.
+
+# Documentation:
+#   Enabled: false  # Ignore errors in comments and documentation
+
+# StringLiterals:
+#   Enabled: false  # Ignores double/single quotes
+
+AllCops:
+  RunRailsCops: true
+  Exclude:
+    - db/**/*
+    - vendor/**/*
+    - bin/*
+    - Guardfile

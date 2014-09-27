@@ -1,3 +1,4 @@
+# Controls the flow of data between the views/projects and project.rb model
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
   # before_action :authenticate_user!, except: [:index, :show]
@@ -17,10 +18,10 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(project_params)
     if @project.save
-      flash[:notice] = "Project was successfully created."
+      flash[:notice] = 'Project was successfully created.'
       redirect_to @project
     else
-      flash.now[:error] = "Project could not be saved."
+      flash.now[:error] = 'Project could not be saved.'
       render :new
     end
   end
@@ -30,7 +31,7 @@ class ProjectsController < ApplicationController
 
   def update
     if @project.update_attributes(project_params)
-      redirect_to @project, notice: "Project was successfully updated."
+      redirect_to @project, notice: 'Project was successfully updated.'
     else
       render :edit
     end
@@ -38,7 +39,7 @@ class ProjectsController < ApplicationController
 
   def destroy
     @project.destroy
-    redirect_to projects_path, notice: "Project was successfully destroyed."
+    redirect_to projects_path, notice: 'Project was successfully destroyed.'
   end
 
   private

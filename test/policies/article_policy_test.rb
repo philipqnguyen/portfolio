@@ -1,7 +1,7 @@
 require 'test_helper'
 
+# Test for article policy
 class ArticlePolicyTest < ActiveSupport::TestCase
-
   def test_scope
   end
 

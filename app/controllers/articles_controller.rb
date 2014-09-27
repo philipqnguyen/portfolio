@@ -1,3 +1,4 @@
+# Controls the data flow between the articles view and the article.rb model
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
@@ -16,9 +17,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1
   # GET /articles/1.json
   def show
-    if !@article.published
-      authorize @article
-    end
+    authorize @article unless @article.published
   end
 
   # GET /articles/new
@@ -79,7 +78,7 @@ class ArticlesController < ApplicationController
   end
 
   def user_not_authorized
-    flash[:error] = "You are not authorized to perform this action."
+    flash[:error] = 'You are not authorized to perform this action.'
     redirect_to(request.referrer || root_path)
   end
 end

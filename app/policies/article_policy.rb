@@ -1,3 +1,4 @@
+# Policies for articles
 class ArticlePolicy < ApplicationPolicy
   def permitted_attributes
     if user.editor?
@@ -31,6 +32,8 @@ class ArticlePolicy < ApplicationPolicy
     user.author? || user.editor? if user
   end
 
+  # Scope controls the data that can be displayed to specific user roles in
+  # the views. This scope inherits from the scope in ApplicationPolicy::Scope
   class Scope < Scope
     def resolve
       if user

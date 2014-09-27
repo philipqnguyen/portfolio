@@ -130,6 +130,7 @@
   "MiniTest": {
     "coverage": {
       "/Users/philip/codefellows/rails/day2/portfolio/app/models/user.rb": [
+        null,
         1,
         null,
         null,
@@ -148,6 +149,7 @@
         null
       ],
       "/Users/philip/codefellows/rails/day2/portfolio/app/helpers/application_helper.rb": [
+        null,
         1,
         1,
         41,
@@ -160,25 +162,30 @@
         null
       ],
       "/Users/philip/codefellows/rails/day2/portfolio/app/helpers/articles_helper.rb": [
+        null,
         1,
         null
       ],
       "/Users/philip/codefellows/rails/day2/portfolio/app/helpers/welcome_helper.rb": [
+        null,
         1,
         null
       ],
       "/Users/philip/codefellows/rails/day2/portfolio/app/models/article.rb": [
+        null,
         1,
         1,
         null
       ],
       "/Users/philip/codefellows/rails/day2/portfolio/app/models/project.rb": [
+        null,
         1,
         1,
         1,
         null
       ],
       "/Users/philip/codefellows/rails/day2/portfolio/app/controllers/projects_controller.rb": [
+        null,
         1,
         1,
         null,
@@ -234,6 +241,7 @@
         null
       ],
       "/Users/philip/codefellows/rails/day2/portfolio/app/controllers/application_controller.rb": [
+        null,
         1,
         null,
         null,
@@ -242,12 +250,14 @@
         null
       ],
       "/Users/philip/codefellows/rails/day2/portfolio/app/controllers/welcome_controller.rb": [
+        null,
         1,
         1,
         null,
         null
       ],
       "/Users/philip/codefellows/rails/day2/portfolio/app/controllers/articles_controller.rb": [
+        null,
         1,
         1,
         1,
@@ -267,8 +277,6 @@
         null,
         1,
         14,
-        6,
-        null,
         null,
         null,
         null,
@@ -335,6 +343,7 @@
         null
       ],
       "/Users/philip/codefellows/rails/day2/portfolio/app/policies/article_policy.rb": [
+        null,
         1,
         1,
         8,
@@ -368,6 +377,8 @@
         1,
         null,
         null,
+        null,
+        null,
         1,
         1,
         17,
@@ -380,6 +391,7 @@
         null
       ],
       "/Users/philip/codefellows/rails/day2/portfolio/app/policies/application_policy.rb": [
+        null,
         1,
         1,
         null,
@@ -420,6 +432,8 @@
         0,
         null,
         null,
+        null,
+        null,
         1,
         1,
         null,
@@ -432,11 +446,10 @@
         0,
         null,
         null,
-        null,
         null
       ]
     },
-    "timestamp": 1411799390
+    "timestamp": 1411861361
   },
   "Unknown Test Framework": {
     "coverage": {
