@@ -9,27 +9,27 @@ class ArticlePolicy < ApplicationPolicy
   end
 
   def update?
-    user.id == record.author_id || user.editor? if user
+    user.id == record.author_id || user.editor?
   end
 
   def create?
-    user.author? || user.editor? if user
+    user.author? || user.editor?
   end
 
   def destroy?
-    user.editor? if user
+    user.editor?
   end
 
   def publish?
-    user.editor? if user
+    user.editor?
   end
 
   def show?
-    user.author? || user.editor? if user
+    user.author? || user.editor?
   end
 
   def author_page?
-    user.author? || user.editor? if user
+    user.author? || user.editor?
   end
 
   # Scope controls the data that can be displayed to specific user roles in

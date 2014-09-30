@@ -2,8 +2,30 @@
 class ApplicationPolicy
   attr_reader :user, :record
 
+  class Visitor
+    def editor?
+      false
+    end
+
+    def author?
+      false
+    end
+
+    def id
+      false
+    end
+
+    def visitor?
+      true
+    end
+  end
+
   def initialize(user, record)
-    @user = user
+    if user
+      @user = user
+    else
+      @user = Visitor.new
+    end
     @record = record
   end
 

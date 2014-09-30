@@ -1,8 +1,11 @@
 class CommentsController < ApplicationController
 
   def create
-    @article = Article.find(params[:article_id])
-    @comment = @article.comments.new(comment_params)
+    @article = Article.find(params[:article_id]) # Obtains ID from URL
+
+    # Builds the rest of the comments with the form data.
+    @comment = @article.comments.build(comment_params)
+
     # authorize @comment
 
     if @comment.save
