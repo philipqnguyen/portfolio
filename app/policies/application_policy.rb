@@ -14,10 +14,6 @@ class ApplicationPolicy
     def id
       false
     end
-
-    def visitor?
-      true
-    end
   end
 
   def initialize(user, record)
@@ -67,7 +63,11 @@ class ApplicationPolicy
     attr_reader :user, :scope
 
     def initialize(user, scope)
-      @user = user
+      if user
+        @user = user
+      else
+        @user = Visitor.new
+      end
       @scope = scope
     end
 

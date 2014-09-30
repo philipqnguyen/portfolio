@@ -3,15 +3,57 @@ comment_1:
   author: Looney
   author_email: loone@looney.com
   author_url: looney.com
-  content: "This is an approved comment."
+  content: This is an approved comment.
   approved: true
   article_id: 3
+  author_id: 3
 
 comment_2:
   id: 2
   author: Pooney
   author_email: pooney@pooney.com
   author_url: pooney.com
-  content: "This is an unapproved comment."
+  content: This is an unapproved comment.
   approved: false
   article_id: 3
+  author_id: 3
+
+comment_3:
+  id: 3
+  author: dude
+  author_email: dude@dude.com
+  author_url: dude.com
+  content: Author_2 comment
+  approved: false
+  article_id: 2
+  author_id: 2
+
+comment_4:
+  id: 4
+  author: omg
+  author_email: dude@dude.com
+  author_url: dude.com
+  content: unapproved comment
+  approved: false
+  article_id: 5
+  author_id: 5
+
+comment_5:
+  id: 5
+  author: dude
+  author_email: dude@dude.com
+  author_url: dude.com
+  content: Author_1 comment
+  approved: false
+  article_id: 1
+  author_id: 1
+
+comment_6:
+  id: 6
+  author: fdsa
+  author_email: sadf
+  author_url: fdsaf.com
+  content: Editor comment
+  approved: false
+  article_id: 7
+  author_id: 4

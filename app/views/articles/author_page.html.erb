@@ -15,20 +15,50 @@
     <%= link_to 'All Articles', articles_path %>
   </div>
 
-  <% @articles.each do |article| %>
-    <article class="large-12 columns">
-      <h3><%= article.title %></h3>
-      <p><%= article.body %></p>
+  <section class="small-6 columns">
+    <% @articles.each do |article| %>
+      <article>
+        <h3><%= article.title %></h3>
+        <p><%= article.body %></p>
 
-      <%= link_to 'Show', article %>
+        <%= link_to 'Show', article %>
 
-      <% if policy(article).update? %>
-        <%= link_to 'Edit', edit_article_path(article) %>
-      <% end %>
+        <% if policy(article).update? %>
+          <%= link_to 'Edit', edit_article_path(article) %>
+        <% end %>
 
-      <% if policy(article).destroy? %>
-        <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
-    </article>
-  <% end %>
+        <% if policy(article).destroy? %>
+          <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </article>
+    <% end %>
+  </section>
+
+  <section class="small-6 columns">
+    <h3>Comments waiting for Approval</h3>
+    <% @comments.each do |comment| %>
+      <hr>
+      <article>
+        <h4><%= @article.find(comment.article_id).title %></h4>
+        <h4><%= comment.author %></h4>
+        <h4><%= comment.author_email %></h4>
+        <h4><%= comment.author_url %></h4>
+
+        <p><%= comment.content %></p>
+
+        <%= form_for([@article.find(comment.article_id), comment]) do |f| %>
+
+          <div class="field">
+            <%= f.label :approved %><br>
+            <%= f.check_box :approved %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit %>
+          </div>
+        <% end %>
+
+      </article>
+    <% end %>
+  </section>
 </section>

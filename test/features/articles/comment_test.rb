@@ -33,11 +33,12 @@ describe 'Comments on articles page' do
     end
 
     it 'should let the author approve comments on his article' do
-      outstanding_comments = page.all(:link, 'Approve').count
+      # page.must_have_content "unapproved comment"
 
-      page.all(:link, 'Approve')[0].click
+      check 'Approved'
+      click_on 'Update Comment'
 
-      page.all(:link, 'Approve').count.must_equal(outstanding_comments - 1)
+      page.wont_have_content "unapproved comment"
     end
 
     it "should not let author approve comments of other's on author page" do
@@ -46,23 +47,13 @@ describe 'Comments on articles page' do
   end
 
   describe 'As an editor, I want to approve any comments on editor page' do
-    before do
-      sign_in :editor
-      visit editor_page_path
-    end
-
     it 'should show all comments from all authors' do
+      sign_in :editor
+      visit author_page_path
+
       page.must_have_content 'Author_1 comment'
       page.must_have_content 'Author_2 comment'
       page.must_have_content 'Editor comment'
-    end
-
-    it 'should let the editor approve comments' do
-      outstanding_comments = page.all(:link, 'Approve').count
-
-      page.all(:link, 'Approve')[0].click
-
-      page.all(:link, 'Approve').count.must_equal(outstanding_comments - 1)
     end
   end
 end

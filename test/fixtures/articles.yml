@@ -39,3 +39,10 @@ author_art_2:
   body: Body by author again
   author_id: 5
   published: true
+
+editor_article:
+  id: 7
+  title: blah article
+  body: Body by blah
+  author_id: 4
+  published: true

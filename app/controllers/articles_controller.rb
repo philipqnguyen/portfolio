@@ -12,6 +12,9 @@ class ArticlesController < ApplicationController
   def author_page
     @articles = current_user.articles.all
     authorize @articles
+
+    @article = Article
+    @comments = policy_scope(Comment).where approved: false
   end
 
   # GET /articles/1
@@ -19,7 +22,7 @@ class ArticlesController < ApplicationController
   def show
     authorize @article unless @article.published
     @comment = @article.comments.build # builds a comment only w/ article_id
-    @comments = @article.comments
+    @comments = policy_scope(@article.comments)
   end
 
   # GET /articles/new
