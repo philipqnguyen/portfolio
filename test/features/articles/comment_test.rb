@@ -15,8 +15,12 @@ describe 'Comments on articles page' do
     end
 
     it 'should let the visitor comment' do
-      page.fill_in 'Comments', with: 'HELLO! Comment from the visitor!'
-      click_on 'Submit Comment'
+      page.fill_in 'Name:', with: 'Joe Bob'
+      page.fill_in 'URL:', with: 'joebobsjoe.com'
+      page.fill_in 'Email:', with: 'joe@bob.com'
+      page.fill_in 'Comments:', with: 'HELLO! Comment from the visitor!'
+
+      click_on 'Create Comment'
 
       page.must_have_content 'Your comment will be reviewed'
     end

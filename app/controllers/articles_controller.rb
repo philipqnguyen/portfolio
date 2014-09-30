@@ -18,6 +18,8 @@ class ArticlesController < ApplicationController
   # GET /articles/1.json
   def show
     authorize @article unless @article.published
+    @comment = Comment.new(article: @article)
+    @comments = @article.comments
   end
 
   # GET /articles/new

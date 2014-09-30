@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :projects
-  resources :articles
+  resources :articles do
+    resources :comments
+  end
 
   get 'author_page' => 'articles#author_page'
 

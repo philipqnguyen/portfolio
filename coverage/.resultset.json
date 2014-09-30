@@ -152,7 +152,7 @@
         null,
         1,
         1,
-        45,
+        46,
         0,
         0,
         0,
@@ -175,6 +175,12 @@
         null,
         1,
         1,
+        1,
+        null
+      ],
+      "/Users/philip/codefellows/rails/day2/portfolio/app/models/comment.rb": [
+        1,
+        1,
         null
       ],
       "/Users/philip/codefellows/rails/day2/portfolio/app/models/project.rb": [
@@ -182,22 +188,6 @@
         1,
         1,
         1,
-        null
-      ],
-      "/Users/philip/codefellows/rails/day2/portfolio/app/controllers/application_controller.rb": [
-        null,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null
-      ],
-      "/Users/philip/codefellows/rails/day2/portfolio/app/controllers/welcome_controller.rb": [
-        null,
-        1,
-        1,
-        null,
         null
       ],
       "/Users/philip/codefellows/rails/day2/portfolio/app/controllers/articles_controller.rb": [
@@ -220,6 +210,8 @@
         null,
         null,
         1,
+        18,
+        17,
         17,
         null,
         null,
@@ -270,7 +262,7 @@
         null,
         null,
         1,
-        27,
+        28,
         null,
         null,
         null,
@@ -286,6 +278,15 @@
         null,
         null
       ],
+      "/Users/philip/codefellows/rails/day2/portfolio/app/controllers/application_controller.rb": [
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null
+      ],
       "/Users/philip/codefellows/rails/day2/portfolio/app/policies/article_policy.rb": [
         null,
         1,
@@ -298,7 +299,7 @@
         null,
         null,
         1,
-        113,
+        114,
         null,
         null,
         1,
@@ -306,7 +307,7 @@
         null,
         null,
         1,
-        108,
+        109,
         null,
         null,
         1,
@@ -340,8 +341,8 @@
         1,
         null,
         1,
-        289,
-        289,
+        291,
+        291,
         null,
         null,
         1,
@@ -389,6 +390,13 @@
         1,
         0,
         null,
+        null,
+        null
+      ],
+      "/Users/philip/codefellows/rails/day2/portfolio/app/controllers/welcome_controller.rb": [
+        null,
+        1,
+        1,
         null,
         null
       ],
@@ -447,9 +455,34 @@
         9,
         null,
         null
+      ],
+      "/Users/philip/codefellows/rails/day2/portfolio/app/controllers/comments_controller.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null
       ]
     },
-    "timestamp": 1412028351
+    "timestamp": 1412053446
   },
   "Unknown Test Framework": {
     "coverage": {

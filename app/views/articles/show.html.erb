@@ -27,3 +27,9 @@
 <% end %>
 <%= link_to 'Back', articles_path %>
 
+<% @comments.each do |comment| %>
+  <p><%= comment.author %></p>
+  <p><%= comment.content %></p>
+<% end %>
+
+<%= render 'form_comment' %>

@@ -1,0 +1,17 @@
+comment_1:
+  id: 1
+  author: Looney
+  author_email: loone@looney.com
+  author_url: looney.com
+  content: "This is an approved comment."
+  approved: true
+  article_id: 3
+
+comment_2:
+  id: 2
+  author: Pooney
+  author_email: pooney@pooney.com
+  author_url: pooney.com
+  content: "This is an unapproved comment."
+  approved: false
+  article_id: 3
