@@ -32,4 +32,8 @@
   <p><%= comment.content %></p>
 <% end %>
 
-<%= render 'form_comment' %>
+<% if policy(@comment).create? %>
+  <%= render 'form_comment' %>
+<% else %>
+  <p>You must log in to comment</p>
+<% end %>

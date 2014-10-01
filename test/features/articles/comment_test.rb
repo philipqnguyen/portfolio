@@ -1,7 +1,7 @@
 require 'test_helper'
 
 describe 'Comments on articles page' do
-  describe 'As a site visitor' do
+  describe 'As an unsigned site visitor' do
     before do
       visit article_path articles(:article_3).id
     end
@@ -14,12 +14,20 @@ describe 'Comments on articles page' do
       page.must_have_content 'This is an approved comment'
     end
 
-    it 'should let the visitor comment' do
+    it 'should not let the visitor comment' do
+      page.must_have_content 'You must log in to comment'
+    end
+  end
+
+  describe 'As a signed in visitor with twitter on the article page' do
+    it 'should let the signed in visitor comment' do
+      sign_in_twitter
+      visit article_path(articles(:article_3).id)
+
       page.fill_in 'Name:', with: 'Joe Bob'
       page.fill_in 'URL:', with: 'joebobsjoe.com'
       page.fill_in 'Email:', with: 'joe@bob.com'
-      page.fill_in 'Comments:', with: 'HELLO! Comment from the visitor!'
-
+      page.fill_in 'Comments:', with: 'HELLO! Comment from the signed visitor!'
       click_on 'Create Comment'
 
       page.must_have_content 'Your comment will be reviewed'

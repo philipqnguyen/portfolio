@@ -4,6 +4,10 @@ class CommentPolicy < ApplicationPolicy
     [:approved] if user.editor? || user.author?
   end
 
+  def create?
+    user.editor? || user.author? || user.visitor?
+  end
+
   # Scope controls the data that can be displayed to specific user roles in
   # the views. This scope inherits from the scope in ApplicationPolicy::Scope
   class Scope < Scope

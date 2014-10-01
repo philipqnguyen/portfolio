@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
     # Builds the rest of the comments with the form data.
     @comment = @article.comments.build(comment_params)
 
-    # authorize @comment
+    authorize @comment
 
     if @comment.save
       User.find(@article.author_id).comments << @comment

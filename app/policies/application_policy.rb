@@ -3,12 +3,16 @@ class ApplicationPolicy
   attr_reader :user, :record
 
   # Used in place for empty user
-  class Visitor
+  class NilUser
     def editor?
       false
     end
 
     def author?
+      false
+    end
+
+    def visitor?
       false
     end
 
@@ -21,7 +25,7 @@ class ApplicationPolicy
     if user
       @user = user
     else
-      @user = Visitor.new
+      @user = NilUser.new
     end
     @record = record
   end
@@ -67,7 +71,7 @@ class ApplicationPolicy
       if user
         @user = user
       else
-        @user = Visitor.new
+        @user = NilUser.new
       end
       @scope = scope
     end
