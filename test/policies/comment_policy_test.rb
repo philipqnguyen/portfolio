@@ -1,7 +1,7 @@
 require 'test_helper'
 
+# Test for comment policies
 class CommentPolicyTest < ActiveSupport::TestCase
-
   def test_scope
   end
 

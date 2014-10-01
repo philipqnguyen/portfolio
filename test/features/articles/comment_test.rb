@@ -1,4 +1,4 @@
-require "test_helper"
+require 'test_helper'
 
 describe 'Comments on articles page' do
   describe 'As a site visitor' do
@@ -38,7 +38,7 @@ describe 'Comments on articles page' do
       check 'Approved'
       click_on 'Update Comment'
 
-      page.wont_have_content "unapproved comment"
+      page.wont_have_content 'unapproved comment'
     end
 
     it "should not let author approve comments of other's on author page" do

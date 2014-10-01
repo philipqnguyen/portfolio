@@ -2,6 +2,7 @@
 class ApplicationPolicy
   attr_reader :user, :record
 
+  # Used in place for empty user
   class Visitor
     def editor?
       false

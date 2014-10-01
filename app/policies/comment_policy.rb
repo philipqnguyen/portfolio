@@ -1,10 +1,11 @@
+# Comment
 class CommentPolicy < ApplicationPolicy
   def permitted_attributes
-    if user.editor? || user.author?
-      [:approved]
-    end
+    [:approved] if user.editor? || user.author?
   end
 
+  # Scope controls the data that can be displayed to specific user roles in
+  # the views. This scope inherits from the scope in ApplicationPolicy::Scope
   class Scope < Scope
     def resolve
       if user.editor?
