@@ -1,13 +1,10 @@
 # Comments
 class CommentsController < ApplicationController
+  before_action :set_article, only: [:create, :update]
+
   def create
-    @article = Article.find(params[:article_id]) # Obtains ID from URL
-
-    # Builds the rest of the comments with the form data.
-    @comment = @article.comments.build(comment_params)
-
+    @comment = @article.comments.build(comment_params) # Build rest of comments
     authorize @comment
-
     if @comment.save
       User.find(@article.author_id).comments << @comment
       redirect_to(request.referrer || root_path)
@@ -19,7 +16,6 @@ class CommentsController < ApplicationController
   end
 
   def update
-    @article = Article.find(params[:article_id])
     @comment = @article.comments.find(params[:id])
     if @comment.update(comment_params)
       redirect_to(request.referrer || root_path)
@@ -30,6 +26,10 @@ class CommentsController < ApplicationController
   end
 
   private
+
+  def set_article
+    @article = Article.find(params[:article_id]) # Obtains ID from URL
+  end
 
   def comment_params
     params.require(:comment).permit(
