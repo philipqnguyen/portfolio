@@ -15,6 +15,3 @@
 /log/*.log
 /tmp
 .env
-
-# Ignore environmental variables.
-/config/secrets.yml
