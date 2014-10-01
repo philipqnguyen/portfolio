@@ -27,3 +27,13 @@
 <% end %>
 <%= link_to 'Back', articles_path %>
 
+<% @comments.each do |comment| %>
+  <p><%= comment.author %></p>
+  <p><%= comment.content %></p>
+<% end %>
+
+<% if policy(@comment).create? %>
+  <%= render 'form_comment' %>
+<% else %>
+  <p>You must log in to comment</p>
+<% end %>

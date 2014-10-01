@@ -9,9 +9,11 @@ This Portfolio is under heavy construction. When finished, it will be my portfol
 
 Current it can be used to post blog articles with a title and a body. In addition, it can be used to post projects in the portfolio section of the app. Projects can also take an image url and display the image as well.
 
-##Authentication via devise.
+##Authentication via devise and OAuth Twitter.
 
 Users can sign up, sign in, and sign out. Users must be signed in to post/edit/delete articles in the blog section.
+
+In addition, uses can sign up via Twitter.
 
 Articles belong to Users (also known as Authors), and Users has many Articles.
 
@@ -29,9 +31,9 @@ Uses Pundit to create authorization policies.
 
 ![](http://s6.photobucket.com/user/ffmegaman/media/ScreenShot2014-09-22at113556PM.png.html "Screenshot of homepage")
 
-## Features
+## Current Issues
 
-This will be a BDD project.
+Sign up via twitter works, but after sign out, and sign in again will fail.
 
 ## Author
 

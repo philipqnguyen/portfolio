@@ -36,6 +36,25 @@ module ActiveSupport
       fill_in 'Password', with: 'password'
       click_on 'Log in'
     end
+
+    def sign_in_twitter
+      visit root_path
+      click_on 'Sign in'
+      omniauth_test_settings
+      click_on 'Sign in with Twitter'
+    end
+
+    def omniauth_test_settings
+      OmniAuth.config.test_mode = true
+      Capybara.current_session.driver.request.env['devise.mapping'] =
+        Devise.mappings[:user]
+      Capybara.current_session.driver.request.env['omniauth.auth'] =
+        OmniAuth.config.mock_auth[:twitter]
+      OmniAuth.config.add_mock(
+        :twitter,
+        uid: '12345',
+        info: { nickname: 'test_twitter_user' })
+    end
   end
 end
 

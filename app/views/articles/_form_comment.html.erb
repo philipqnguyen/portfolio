@@ -1,0 +1,44 @@
+<%= form_for([@article, @comment]) do |f| %>
+  <% if @comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@comment.errors.count, "error") %>
+        prohibited this comment from being saved:</h2>
+
+      <ul>
+      <% @comment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :author, 'Name:' %><br>
+    <%= f.text_area :author %>
+  </div>
+
+  <div class="field">
+    <%= f.label :author_email, 'Email:' %><br>
+    <%= f.text_area :author_email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :author_url, 'URL:' %><br>
+    <%= f.text_area :author_url %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content, 'Comments:' %><br>
+    <%= f.text_area :content %>
+  </div>
+
+<%
+=begin %>
+  <%= f.hidden_field :article_id, value: @article.id %>
+<%
+=end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -2,8 +2,31 @@
 class ApplicationPolicy
   attr_reader :user, :record
 
+  # Used in place for empty user
+  class NilUser
+    def editor?
+      false
+    end
+
+    def author?
+      false
+    end
+
+    def visitor?
+      false
+    end
+
+    def id
+      false
+    end
+  end
+
   def initialize(user, record)
-    @user = user
+    if user
+      @user = user
+    else
+      @user = NilUser.new
+    end
     @record = record
   end
 
@@ -45,7 +68,11 @@ class ApplicationPolicy
     attr_reader :user, :scope
 
     def initialize(user, scope)
-      @user = user
+      if user
+        @user = user
+      else
+        @user = NilUser.new
+      end
       @scope = scope
     end
 
