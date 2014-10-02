@@ -32,20 +32,17 @@ describe "As an author, I can't delete an Article from the page" do
     visit articles_path
 
     page.has_no_link?('Destroy').must_equal true
-    page.has_no_link?('Delete').must_equal true
   end
 
   it 'should not delete from the show' do
     visit article_path articles(:hello_test).id
 
     page.has_no_link?('Destroy').must_equal true
-    page.has_no_link?('Delete').must_equal true
   end
 
   it 'should not delete my own article from the show' do
     visit article_path articles(:author_art_2).id
 
     page.has_no_link?('Destroy').must_equal true
-    page.has_no_link?('Delete').must_equal true
   end
 end
