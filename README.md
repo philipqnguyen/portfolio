@@ -17,6 +17,14 @@ In addition, uses can sign up via Twitter.
 
 Articles belong to Users (also known as Authors), and Users has many Articles.
 
+## Authorization w/ Pundit
+
+Uses Pundit to create authorization policies.
+
+- Editors have all powers to create, edit, destroy, and publish articles
+- Authors have the power to create, and edit their own articles
+- Visitors can only read published articles
+
 ![](http://i6.photobucket.com/albums/y242/ffmegaman/ScreenShot2014-09-22at113932PM.png "Screenshot of project show page")
 
 ![](http://i6.photobucket.com/albums/y242/ffmegaman/ScreenShot2014-09-18at125120AM.png "Screenshot of Article index page")
