@@ -7,6 +7,7 @@ comment_1:
   approved: true
   article_id: 3
   author_id: 3
+  commentable: article_3 (Article)
 
 comment_2:
   id: 2

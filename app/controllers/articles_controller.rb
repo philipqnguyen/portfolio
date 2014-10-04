@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
   end
 
   def author_page
-    @articles = current_user.articles.all
+    @articles = policy_scope(Article)
     authorize @articles
 
     @article = Article

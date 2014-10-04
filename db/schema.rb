@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141001060352) do
+ActiveRecord::Schema.define(version: 20141004224929) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,10 +35,14 @@ ActiveRecord::Schema.define(version: 20141001060352) do
     t.string  "user_agent"
     t.string  "referrer"
     t.text    "content"
-    t.boolean "approved",     default: false
+    t.boolean "approved",         default: false
     t.integer "article_id"
     t.integer "author_id"
+    t.integer "commentable_id"
+    t.string  "commentable_type"
   end
+
+  add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type", using: :btree
 
   create_table "projects", force: true do |t|
     t.string   "name"

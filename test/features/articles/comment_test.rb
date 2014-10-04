@@ -10,7 +10,7 @@ describe 'Comments on articles page' do
       page.wont_have_content 'This is an unapproved comment'
     end
 
-    it 'should let the visitor see approved comments' do
+    it 'should let the visitor see approved comments' do # FIXME
       page.must_have_content 'This is an approved comment'
     end
 
@@ -40,9 +40,7 @@ describe 'Comments on articles page' do
       visit author_page_path
     end
 
-    it 'should let the author approve comments on his article' do
-      # page.must_have_content "unapproved comment"
-
+    it 'should let the author approve comments on his article' do # FIXME
       check 'Approved'
       click_on 'Update Comment'
 
