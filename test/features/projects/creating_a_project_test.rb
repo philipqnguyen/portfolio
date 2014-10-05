@@ -2,6 +2,7 @@ require 'test_helper'
 
 describe 'As the site owner, I want to add a portfolio item page' do
   it "should result in 'Project successfully created.'" do
+    sign_in :editor
     visit projects_path
     click_on 'New Project'
 
@@ -16,6 +17,7 @@ describe 'As the site owner, I want to add a portfolio item page' do
   end
 
   it 'should not submit if inputs are unfilled' do
+    sign_in :editor
     visit new_project_path
 
     click_on 'Create Project'

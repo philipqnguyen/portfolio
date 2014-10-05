@@ -2,7 +2,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
-  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
   # GET /articles
   # GET /articles.json
   def index
@@ -10,18 +9,20 @@ class ArticlesController < ApplicationController
   end
 
   def author_page
-    @articles = current_user.articles.all
+    @articles = policy_scope(Article)
     authorize @articles
 
     @article = Article
-    @comments = policy_scope(Comment).where approved: false
+    @comments = policy_scope(Comment)
+    @projects = policy_scope(Project)
   end
 
   # GET /articles/1
   # GET /articles/1.json
   def show
     authorize @article unless @article.published
-    @comment = @article.comments.build # builds a comment only w/ article_id
+    @commentable = @article
+    @comment = @commentable.comments.build # builds a comment w/ article_id
     @comments = policy_scope(@article.comments)
   end
 
@@ -80,10 +81,5 @@ class ArticlesController < ApplicationController
   def article_params
     params.require(:article).permit(
       *policy(@article || Article).permitted_attributes)
-  end
-
-  def user_not_authorized
-    flash[:error] = 'You are not authorized to perform this action.'
-    redirect_to(request.referrer || root_path)
   end
 end

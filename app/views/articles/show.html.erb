@@ -33,7 +33,7 @@
 <% end %>
 
 <% if policy(@comment).create? %>
-  <%= render 'form_comment' %>
+  <%= render 'comment_partials/form_comment' %>
 <% else %>
   <p>You must log in to comment</p>
 <% end %>

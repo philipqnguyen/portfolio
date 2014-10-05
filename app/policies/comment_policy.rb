@@ -15,7 +15,7 @@ class CommentPolicy < ApplicationPolicy
       if user.editor?
         scope.all
       elsif user.author?
-        scope.where author_id: user.id
+        scope.where(author_id: user.id) && scope.where(approved: false)
       else
         scope.where approved: true
       end

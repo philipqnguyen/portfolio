@@ -9,3 +9,12 @@
 <%= link_to 'Destroy', project_path(@project),
   method: :delete,
   data: { confirm: "Are you sure?" } %>
+
+<% @comments.each do |comment| %>
+  <p><%= comment.author %></p>
+  <p><%= comment.content %></p>
+<% end %>
+
+<% if policy(@comment).create? %>
+  <%= render 'comment_partials/form_comment' %>
+<% end %>

@@ -7,7 +7,14 @@
       <li><%= link_to "Home", root_path, class: "button" %></li>
       <li><%= link_to "Blog", articles_path, class: "button" %></li>
       <li><%= link_to "Portfolio", projects_path, class: "button" %></li>
+
       <% if user_signed_in? %>
+        <!-- FIXME: Code smell. Refactor to use Pundit -->
+        <% if current_user.author? || current_user.editor? %>
+          <li>
+            <%= link_to "Author's Page", author_page_path, class: "button" %>
+          </li>
+        <% end %>
         <li>
           <%= link_to "Sign out", destroy_user_session_path, method: :delete,
           class: "button" %>

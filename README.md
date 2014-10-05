@@ -21,6 +21,10 @@ Articles belong to Users (also known as Authors), and Users has many Articles.
 
 Uses Pundit to create authorization policies.
 
+## Polymorphic Association
+
+Comments are polymorphic and therefore associated with both projects and articles.
+
 - Editors have all powers to create, edit, destroy, and publish articles
 - Authors have the power to create, and edit their own articles
 - Visitors can only read published articles
@@ -31,10 +35,11 @@ Uses Pundit to create authorization policies.
 
 ![](http://s6.photobucket.com/user/ffmegaman/media/ScreenShot2014-09-22at113556PM.png.html "Screenshot of homepage")
 
-## Current Issues
-
-Sign up via twitter works, but after sign out, and sign in again will fail.
 
 ## Author
 
 Philip Q Nguyen
+
+## Thanks to
+
+RailsCasts and Ivan Oats' [gist](https://github.com/UW-Advanced-Rails-2014/portfolio/commit/e5ac9ac700ad1aa3ae5d0cfe4bf6626930dd32b8#diff-ad7009a67ee4df1721dd8e449dffec56R36)

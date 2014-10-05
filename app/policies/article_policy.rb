@@ -39,7 +39,7 @@ class ArticlePolicy < ApplicationPolicy
       if user.editor?
         scope.all
       elsif user.author?
-        scope.where :author_id == user.id
+        scope.where author_id: user.id
       else
         scope.where published: true
       end
