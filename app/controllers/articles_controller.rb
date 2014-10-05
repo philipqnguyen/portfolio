@@ -14,7 +14,7 @@ class ArticlesController < ApplicationController
     authorize @articles
 
     @article = Article
-    @comments = policy_scope(Comment).where approved: false
+    @comments = policy_scope(Comment)
   end
 
   # GET /articles/1

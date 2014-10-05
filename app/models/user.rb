@@ -6,8 +6,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :articles, foreign_key: 'author_id', dependent: :destroy
-  # has_many :comments, foreign_key: 'author_id'
-  has_many :comments,  as: :commentable
+  has_many :comments, foreign_key: 'author_id'
+  # has_many :comments,  as: :commentable
 
   def author?
     role == 'author'

@@ -5,9 +5,9 @@ comment_1:
   author_url: looney.com
   content: This is an approved comment.
   approved: true
-  article_id: 3
   author_id: 3
-  commentable: article_3 (Article)
+  commentable_id: 3
+  commentable_type: Article
 
 comment_2:
   id: 2
@@ -16,7 +16,8 @@ comment_2:
   author_url: pooney.com
   content: This is an unapproved comment.
   approved: false
-  article_id: 3
+  commentable_id: 3
+  commentable_type: Article
   author_id: 3
 
 comment_3:
@@ -26,7 +27,8 @@ comment_3:
   author_url: dude.com
   content: Author_2 comment
   approved: false
-  article_id: 2
+  commentable_id: 2
+  commentable_type: Article
   author_id: 2
 
 comment_4:
@@ -36,7 +38,8 @@ comment_4:
   author_url: dude.com
   content: unapproved comment
   approved: false
-  article_id: 5
+  commentable_id: 5
+  commentable_type: Article
   author_id: 5
 
 comment_5:
@@ -46,7 +49,8 @@ comment_5:
   author_url: dude.com
   content: Author_1 comment
   approved: false
-  article_id: 1
+  commentable_id: 1
+  commentable_type: Article
   author_id: 1
 
 comment_6:
@@ -56,5 +60,6 @@ comment_6:
   author_url: fdsaf.com
   content: Editor comment
   approved: false
-  article_id: 7
+  commentable_id: 7
+  commentable_type: Article
   author_id: 4

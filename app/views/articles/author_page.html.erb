@@ -41,14 +41,14 @@
       <% article.comments.where(approved: false).each do |comment| %>
         <hr>
         <article>
-          <h4><%= @article.find(comment.article_id).title %></h4>
+          <h4><%= comment.commentable.title %></h4>
           <h4><%= comment.author %></h4>
           <h4><%= comment.author_email %></h4>
           <h4><%= comment.author_url %></h4>
 
           <p><%= comment.content %></p>
 
-          <%= form_for([@article.find(comment.article_id), comment]) do |f| %>
+          <%= form_for([comment.commentable, comment]) do |f| %>
 
             <div class="field">
               <%= f.label :approved %><br>
