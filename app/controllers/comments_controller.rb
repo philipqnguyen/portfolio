@@ -1,12 +1,14 @@
 # Comments
 class CommentsController < ApplicationController
-  before_action :set_article, only: [:create, :update]
+  # before_action :set_article, only: [:create, :update]
+  before_action :load_commentable, only: [:create, :update]
 
   def create
-    @comment = @article.comments.build(comment_params) # Build rest of comments
+    # Build rest of comments
+    @comment = @commentable.comments.build(comment_params)
     authorize @comment
     if @comment.save
-      User.find(@article.author_id).comments << @comment
+      User.find(@commentable.author_id).comments << @comment
       redirect_to(request.referrer || root_path)
       flash[:notice] = 'Your comment will be reviewed.'
     else
@@ -16,7 +18,7 @@ class CommentsController < ApplicationController
   end
 
   def update
-    @comment = @article.comments.find(params[:id])
+    @comment = @commentable.comments.find(params[:id])
     if @comment.update(comment_params)
       redirect_to(request.referrer || root_path)
       flash[:notice] = 'Article was successfully updated.'
@@ -26,6 +28,11 @@ class CommentsController < ApplicationController
   end
 
   private
+
+  def load_commentable # /projects/2  #=> resource = projects and id = 2
+    resource, id = request.path.split('/')[1, 2]
+    @commentable = resource.singularize.classify.constantize.find(id)
+  end
 
   def set_article
     @article = Article.find(params[:article_id]) # Obtains ID from URL

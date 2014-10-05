@@ -63,3 +63,24 @@ comment_6:
   commentable_id: 7
   commentable_type: Article
   author_id: 4
+
+project_comment_1:
+  id: 7
+  author: dude
+  author_email: dude@dude.com
+  author_url: dude.com
+  content: unapproved project comment
+  approved: false
+  commentable_id: 1
+  commentable_type: Project
+
+project_comment_2:
+  id: 8
+  author: fdsa
+  author_email: sadf
+  author_url: fdsaf.com
+  content: this is an approved project comment
+  approved: true
+  commentable_id: 1
+  commentable_type: Project
+

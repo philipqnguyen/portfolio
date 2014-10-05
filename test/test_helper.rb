@@ -55,6 +55,14 @@ module ActiveSupport
         uid: '12345',
         info: { nickname: 'test_twitter_user' })
     end
+
+    def fill_and_submit_comment
+      page.fill_in 'Name:', with: 'visitor'
+      page.fill_in 'URL:', with: 'joebobsjoe.com'
+      page.fill_in 'Email:', with: 'joe@bob.com'
+      page.fill_in 'Comments:', with: 'Signed in visitor here!'
+      click_on 'Create Comment'
+    end
   end
 end
 
