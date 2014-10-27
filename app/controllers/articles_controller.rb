@@ -54,7 +54,7 @@ class ArticlesController < ApplicationController
     if @article.update(article_params)
       message = 'Article was successfully updated.'
       respond_to do |format|
-        format.html { redirect_to @article, notice: message}
+        format.html { redirect_to @article, notice: message }
         format.js
       end
     else
@@ -70,7 +70,7 @@ class ArticlesController < ApplicationController
     message = 'Article was successfully destroyed.'
 
     respond_to do |format|
-      format.html { redirect_to articles_path, notice: message}
+      format.html { redirect_to articles_path, notice: message }
       format.js
     end
   end
@@ -82,7 +82,7 @@ class ArticlesController < ApplicationController
       message = 'Article was successfully created.'
       current_user.articles << article
       respond_to do |format|
-        format.html { redirect_to article, notice: message}
+        format.html { redirect_to article, notice: message }
         format.js
       end
     else
