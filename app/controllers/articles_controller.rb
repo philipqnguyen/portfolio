@@ -29,11 +29,13 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   def new
     @article = Article.new
+    @remote_value = true
   end
 
   # GET /articles/1/edit
   def edit
     authorize @article
+    @remote_value = false
   end
 
   # POST /articles
@@ -42,12 +44,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
     authorize @article
 
-    if @article.save
-      current_user.articles << @article
-      redirect_to @article, notice: 'Article was successfully created.'
-    else
-      render :new
-    end
+    save @article
   end
 
   # PATCH/PUT /articles/1
@@ -55,7 +52,11 @@ class ArticlesController < ApplicationController
   def update
     authorize @article
     if @article.update(article_params)
-      redirect_to @article, notice: 'Article was successfully updated.'
+      message = 'Article was successfully updated.'
+      respond_to do |format|
+        format.html { redirect_to @article, notice: message }
+        format.js
+      end
     else
       render :edit
     end
@@ -66,10 +67,28 @@ class ArticlesController < ApplicationController
   def destroy
     authorize @article
     @article.destroy
-    redirect_to articles_url, notice: 'Article was successfully destroyed.'
+    message = 'Article was successfully destroyed.'
+
+    respond_to do |format|
+      format.html { redirect_to articles_path, notice: message }
+      format.js
+    end
   end
 
   private
+
+  def save(article)
+    if article.save
+      message = 'Article was successfully created.'
+      current_user.articles << article
+      respond_to do |format|
+        format.html { redirect_to article, notice: message }
+        format.js
+      end
+    else
+      render :new
+    end
+  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_article

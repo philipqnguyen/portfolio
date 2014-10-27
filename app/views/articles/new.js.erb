@@ -1,0 +1,6 @@
+var ready = function () {
+  $('#new-link').hide().after('<%= j render("form") %>');
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
