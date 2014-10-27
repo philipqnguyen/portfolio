@@ -1,0 +1,14 @@
+<article class="large-12 columns" id=<%= "article-#{article.id}" %>>
+  <h3><%= article.title %></h3>
+  <p><%= article.body %></p>
+
+  <%= link_to 'Show', article %>
+
+  <% if policy(article).update? %>
+    <%= link_to 'Edit', edit_article_path(article), id: 'edit_link_' + article.id.to_s %>
+  <% end %>
+
+  <% if policy(article).destroy? %>
+    <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
+  <% end %>
+</article>

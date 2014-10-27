@@ -1,0 +1,8 @@
+var ready = function () {
+  $('#new_article').remove();
+  $('#new-link').show();
+  $('#articles-section').append('<%= j render(@article) %>');
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);

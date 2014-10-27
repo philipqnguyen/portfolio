@@ -1,0 +1,6 @@
+var ready = function () {
+  $('#article-<%= @article.id %>').remove();
+};
+
+$(document).ready(ready());
+$(document).on('page:load', ready());

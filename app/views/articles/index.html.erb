@@ -1,4 +1,4 @@
-<section class="row">
+<section class="row" id="articles-section">
   <div class="large-offset-5 large-2 columns">
     <h1>Blog</h1>
     <% if @articles.count == 0 %>
@@ -8,7 +8,7 @@
 
   <% if policy(@articles).create? %>
     <div class="large-12 columns">
-      <%= link_to 'New Article', new_article_path %>
+      <%= link_to 'New Article', new_article_path, id: 'new-link', remote: true %>
     </div>
   <% end %>
   <% if policy(@articles).create? %>
@@ -17,20 +17,5 @@
     </div>
   <% end %>
 
-  <% @articles.each do |article| %>
-    <article class="large-12 columns">
-      <h3><%= article.title %></h3>
-      <p><%= article.body %></p>
-
-      <%= link_to 'Show', article %>
-
-      <% if policy(article).update? %>
-        <%= link_to 'Edit', edit_article_path(article) %>
-      <% end %>
-
-      <% if policy(article).destroy? %>
-        <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' } %>
-      <% end %>
-    </article>
-  <% end %>
+  <%= render @articles %>
 </section>
